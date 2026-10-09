@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.robyroro/mcp-changeatlas",
+  "title": "ChangeAtlas",
+  "description": "Local Git change impact and related test discovery with inspectable import paths",
+  "repository": {
+    "url": "https://github.com/robyroro/mcp-changeatlas",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "mcp-changeatlas",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": { "type": "stdio" },
+      "packageArguments": [{ "type": "positional", "value": "serve" }],
+      "environmentVariables": [
+        {
+          "name": "CHANGEATLAS_ROOT",
+          "description": "Absolute path to the Git repository to inspect",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}
