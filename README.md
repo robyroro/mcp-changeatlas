@@ -38,6 +38,8 @@ For an MCP client, configure a stdio server with command `mcp-changeatlas` and a
 
 The four tools are `repository_overview`, `analyze_changes`, `trace_file`, and `find_tests`. The root is set by the person running the server and cannot be changed by a tool call.
 
+The Docker image is for directory build checks and a self-contained demo. It analyzes the repository snapshot inside the image. To analyze your own work, install the package locally and set `--root` to your repository.
+
 ## How it works
 
 ChangeAtlas reads tracked Python, JavaScript, and TypeScript files and builds a local import graph. Python imports are parsed with the standard library AST. JS/TS relative import, export, and `require` links are found statically. It follows reverse links from a changed file to nearby modules and tests, up to a chosen depth. Results include the file chain that led to each suggestion.
