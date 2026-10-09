@@ -61,7 +61,7 @@ python -m build
 
 The package name and MCP Registry name are set in `pyproject.toml`, `README.md`, and `server.json`. Before the first PyPI release, create a pending trusted publisher for `robyroro/mcp-changeatlas`, workflow `release.yml`, environment `pypi`. Then publish a GitHub release tagged with the matching package version. The release workflow runs tests and publishes the wheel and source archive through PyPI's trusted publishing flow.
 
-Once the exact version is visible on PyPI, validate and publish `server.json` with the [MCP Registry publisher](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/quickstart.mdx). The registry is a separate publication step. A repository or PyPI release alone does not create a registry listing.
+Once the exact version is visible on PyPI, run the `Publish to MCP Registry` GitHub Actions workflow. It validates `server.json` and publishes it with GitHub OIDC, following the [Registry publisher guide](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/github-actions.mdx). The registry is a separate publication step. A repository or PyPI release alone does not create a registry listing.
 
 ## License
 
